@@ -1,0 +1,25 @@
+name: Check Code for Programatic or Style Errors
+
+on: push
+
+jobs:
+  main:
+    name: Setup and Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.6
+      
+      - name: Install Pylama
+        run: |-
+          pip install pylama
+
+      - name: Run Pylama
+        run: |-
+          pylama ./*.py
