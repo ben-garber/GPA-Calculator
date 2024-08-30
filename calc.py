@@ -17,6 +17,7 @@ letter_map = {
     'F': 0
 }
 
+
 def calculate_grade_points(courses: list) -> float:
     """From a list of courses, calculate the total grade points
 
@@ -27,11 +28,12 @@ def calculate_grade_points(courses: list) -> float:
         float: Total grade points
     """
     grade_points = 0
-    
+
     for course in courses:
-        grade_points += int(course[2]) * letter_map[course[1]] 
-    
+        grade_points += int(course[2]) * letter_map[course[1]]
+
     return grade_points
+
 
 def calculate_credit_hours(courses: list) -> int:
     """From a list of courses, calculate total credit hours
